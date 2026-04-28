@@ -100,4 +100,19 @@ public:
             if (current->next != NULL)
                 current->next->prev = current->prev;
         }
+         delete current; 
+        cout << "Record with roll number " << rollNo << " deleted" << endl;
+    }
+
+    void traverse()
+    {
+        if (START == NULL)
+        {
+            cout << "\nList is empty" << endl;
+            return;
+        }
+
+        Node *currentNode = START;
+        cout << "\nRecords in ascending order of roll number are:\n";
+        int i = 0;
 
