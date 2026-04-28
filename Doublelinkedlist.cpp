@@ -18,7 +18,7 @@ Node *START;
 public:
     DoubleLinkedList()
     {
-        START = NULL; // Penjelasan 3: Inisialisasi awal list dalam keadaan kosong
+        START = NULL; 
     }
 
     void addNode()
@@ -194,12 +194,14 @@ int main()
         case '4': list.revtraverse(); break;
         case '5': list.searchData(); break;
         case '6': return 0;
-        default: cout << "Invalid option\n";
+        default: 
+        cout << "Invalid option\n";
         }
 
         cout << "\nPress Enter to continue...";
         cin.ignore();
         cin.get();
+        cout << endl;
         system("clear"); 
     } while (choice != '6');
 }
