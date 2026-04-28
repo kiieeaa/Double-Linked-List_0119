@@ -18,3 +18,14 @@ Node *START;
 public:
     DoubleLinkedList()
     {
+        START = NULL; // Penjelasan 3: Inisialisasi awal list dalam keadaan kosong
+    }
+
+    void addNode()
+    {
+        int nim;
+        cout << "\nEnter the roll number of the student: ";
+        cin >> nim;
+
+        Node *newNode = new Node();
+        newNode->noMhs = nim;
