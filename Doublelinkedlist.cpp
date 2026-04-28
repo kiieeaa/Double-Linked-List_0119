@@ -133,4 +133,11 @@ public:
 
         Node *currentNode = START;
         int i = 0;
+        while (currentNode->next != NULL)
+        {
+            currentNode = currentNode->next;
+            i++;
+        }
+
+        cout << "\nRecords in descending order of roll number are:\n";
 
