@@ -140,4 +140,67 @@ public:
         }
 
         cout << "\nRecords in descending order of roll number are:\n";
+        while (currentNode != NULL)
+        {
+            cout << i + 1 << ". " << currentNode->noMhs << " " << endl;
+            currentNode = currentNode->prev;
+            i--;
+        }
+    }
+
+    void searchData()
+    {
+        if (START == NULL)
+        {
+            cout << "\nList is empty" << endl;
+            return;
+        }
+
+        int rollNo;
+        cout << "\nEnter the roll number to search: ";
+        cin >> rollNo;
+
+        Node *current = START;
+        while (current != NULL && current->noMhs != rollNo)
+            current = current->next;
+
+        if (current == NULL)
+            cout << "Record not found\n";
+        else
+        {
+            cout << "Record found\n";
+            cout << "Roll Number: " << current->noMhs << endl;
+        }
+    }
+};
+
+int main()
+{
+    DoubleLinkedList list;
+    char choice;
+
+    do
+    {
+        cout << "\nMenu:\n";
+        cout << "1. Add Record\n2. Delete Record\n3. View Ascending\n4. View Descending\n5. Search Record\n6. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice)
+        {
+        case '1': list.addNode(); break;
+        case '2': list.hapus(); break;
+        case '3': list.traverse(); break;
+        case '4': list.revtraverse(); break;
+        case '5': list.searchData(); break;
+        case '6': return 0;
+        default: cout << "Invalid option\n";
+        }
+
+        cout << "\nPress Enter to continue...";
+        cin.ignore();
+        cin.get();
+        system("clear"); 
+    } while (choice != '6');
+}
 
