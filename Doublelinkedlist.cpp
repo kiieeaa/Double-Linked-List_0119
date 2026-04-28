@@ -29,3 +29,12 @@ public:
 
         Node *newNode = new Node();
         newNode->noMhs = nim;
+
+        if (START == NULL || nim <= START->noMhs)
+        {
+            if (START != NULL && nim == START->noMhs)
+            {
+                cout << "\nDuplicate number not allowed" << endl;
+                return;
+            }
+            newNode->next = START;
